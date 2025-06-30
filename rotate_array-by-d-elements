@@ -1,0 +1,26 @@
+class Solution {
+    static void reverseArr(int[] arr,int i ,int j){
+
+       while(i<j){
+           int  temp = arr[i];
+           arr[i] = arr[j];
+           arr[j] = temp;
+           
+           i++;
+           j--;
+       }
+    }
+    // Function to rotate an array by d elements in counter-clockwise direction.
+    static void rotateArr(int arr[], int d) {
+        
+         int n = arr.length;
+        
+          if(d==0 || n==0) return;
+         
+          d = d%n;
+         
+          reverseArr(arr,0,d-1);
+          reverseArr(arr,d,n-1);
+          reverseArr(arr,0,n-1);
+    }
+}
