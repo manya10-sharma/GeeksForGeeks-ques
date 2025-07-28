@@ -1,0 +1,37 @@
+{
+    
+    static boolean isPossible(int[] stalls, int k, int m){
+        int cowPlaced = 1;
+       int  lastPosition = stalls[0];
+        for(int i = 0; i<stalls.length ; i++){
+            if(stalls[i] - lastPosition >= m){
+                cowPlaced++;
+                lastPosition = stalls[i];
+            }
+            if (cowPlaced == k) return true;
+        }
+        return false;
+    }
+    
+    public static int aggressiveCows(int[] stalls, int k) {
+        // code here
+        Arrays.sort(stalls);
+        
+        int n = stalls.length;
+        int start = 0;
+        int end = stalls[n-1] - stalls[0];
+        int result = 0;
+        
+        while(start <= end){
+            int mid = start + (end - start)/2;
+            if(isPossible(stalls, k, mid)){
+                result = mid;
+                start = mid + 1;
+            }
+            else{
+                end = mid - 1;
+            }
+        }
+        return result;
+    }
+}
