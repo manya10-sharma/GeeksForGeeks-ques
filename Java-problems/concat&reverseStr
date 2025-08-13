@@ -1,0 +1,13 @@
+
+import java.util.*;
+class Solution {
+    static String conRevstr(String S1, String S2) {
+        String str = S1.concat(S2);
+        int n = str.length();
+        String revStr = "";
+        for(int i = n-1 ; i >= 0 ; i--){
+             revStr += str.charAt(i);
+        }
+        return revStr;
+    }
+}
