@@ -1,0 +1,20 @@
+class Solution {
+    public static boolean isPalindrome(int num){
+        int org  = num;
+        int rev = 0;
+        while(num>0){
+            int digit = num%10 ;
+            rev = rev*10 + digit;
+            num/=10;
+        }
+        return org == rev;
+    }
+    public static boolean isPalinArray(int[] arr) {
+        for(int num : arr){
+            if(!isPalindrome(num)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
