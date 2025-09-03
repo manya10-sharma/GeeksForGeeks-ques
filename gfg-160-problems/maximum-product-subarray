@@ -1,0 +1,21 @@
+import java.util.*;
+class Solution {
+    int maxProduct(int[] arr) {
+        int currMax = arr[0];
+        int currMin = arr[0];
+        int result = arr[0];
+        for(int i=1 ; i<arr.length ; i++){
+            
+            if(arr[i] < 0){
+                int temp = currMax;
+                currMax = currMin;
+                currMin = temp;
+            }
+            currMax = Math.max(arr[i] , currMax*arr[i]);
+            currMin = Math.min(arr[i] , currMin*arr[i]);
+            
+            result = Math.max(currMax,result);
+        }
+        return result;
+    }
+}
