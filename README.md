@@ -10,7 +10,11 @@ Each file is named according to the problem and contains clean, commented code i
 - Basic java
 - Arrays
 - Strings
-- Sorting & Searching
+- Recursion
+- Math
+- Sorting
+- Searching
+- Linked list
 - And more...
 
 ## 📌 Purpose
