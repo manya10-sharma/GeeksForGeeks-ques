@@ -1,0 +1,28 @@
+class Solution {
+    int thirdLargest(int arr[]) {
+        
+        if(arr==null || arr.length < 3) return -1;
+        
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        int thirdLargestEl = Integer.MIN_VALUE;
+    
+        
+        for(int i = 0 ; i < arr.length ; i++){
+            
+            if(arr[i] >=  largest){
+                thirdLargestEl = secondLargest;
+                secondLargest = largest;
+                largest = arr[i];
+            }
+            else if(arr[i] >= secondLargest){
+                thirdLargestEl = secondLargest;
+                secondLargest = arr[i];
+            }
+            else if(arr[i] >= thirdLargestEl){
+                thirdLargestEl = arr[i];
+            }
+        }
+        return thirdLargestEl;
+    }
+}
