@@ -1,0 +1,22 @@
+class Solution {
+    public int kthMissing(int[] arr, int k) {
+        
+        int n = arr.length;
+        int left = 0;
+        int right = n-1;
+        
+        while(left <= right){
+            int m = left + (right-left)/2;
+            int missing = arr[m] - (m+1);
+            
+            if(missing < k){
+                left = m+1;
+            }
+            else{
+                right = m-1;
+            }
+        }
+        
+        return left+k;
+    }
+}
