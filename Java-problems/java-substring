@@ -1,0 +1,6 @@
+class Solution {
+    static String javaSub(String S, int L, int R) {
+        String str = S.substring(L,R+1);
+        return str;
+    }
+}
