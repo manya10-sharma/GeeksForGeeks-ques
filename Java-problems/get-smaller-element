@@ -1,0 +1,11 @@
+class Solution {
+    public static ArrayList<Integer> getSmaller(int arr[], int target) {
+       ArrayList<Integer> ans = new ArrayList<>();
+        for(int num : arr){
+            if(num<target){
+                ans.add(num);
+            }
+        }
+        return ans;
+    }
+}
