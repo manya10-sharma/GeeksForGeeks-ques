@@ -1,0 +1,16 @@
+class Solution {
+    boolean twoSum(int arr[], int target) {
+        HashSet<Integer> h = new HashSet<>();
+        
+        for(int n : arr){
+            int c = target - n;
+            
+            if(h.contains(c)){
+                return true;
+            }
+            h.add(n);
+        }
+        
+        return false;
+    }
+}
