@@ -1,0 +1,33 @@
+class Solution {
+    ArrayList<Integer> findTwoElement(int arr[]){
+        
+        ArrayList<Integer> ans = new ArrayList<>();
+        
+        int n = arr.length;
+        long sum = 0L;
+        
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+        }
+        
+        long orgSum = (long) n * (n + 1) / 2L;
+        
+        int repeating = -1;
+        boolean[] seen = new boolean[n + 1];
+        for (int i = 0; i < n; i++) {
+            int v = arr[i];
+            if (seen[v]) {
+                repeating = v;
+                break;
+            }
+            seen[v] = true;
+        }
+        
+        long missingLong = repeating + (orgSum - sum);
+        int missing = (int) missingLong; 
+        
+        ans.add(repeating);
+        ans.add(missing);
+        return ans;
+    }
+}
