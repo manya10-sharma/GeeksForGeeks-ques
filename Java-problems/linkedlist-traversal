@@ -1,0 +1,8 @@
+class Solution {
+    public static void LinkedListTraversal(LinkedList<Integer> list) {
+       
+        for(int n : list){
+            System.out.print(n+" ");
+        }
+    }
+}
