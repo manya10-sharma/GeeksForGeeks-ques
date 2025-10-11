@@ -1,0 +1,23 @@
+ArrayList<Integer> result = new ArrayList<>();
+        ArrayList<Integer> visited = new ArrayList<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            // if we already counted this number, skip it
+            if (visited.contains(arr[i])) {
+                continue;
+            }
+
+            int count = 0;
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+
+            // mark this number as visited
+            visited.add(arr[i]);
+            // store its frequency
+            result.add(count);
+        }
+
+        return result;
