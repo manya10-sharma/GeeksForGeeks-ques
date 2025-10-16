@@ -1,0 +1,30 @@
+/*
+class Node
+    {
+        int data;
+        Node next;
+        Node(int d) {data = d; next = null; }
+    }
+*/
+class Solution {
+    // Function to remove duplicates from sorted linked list.
+    Node removeDuplicates(Node head) {
+        if(head==null || head.next==null) return head;
+        
+        Node temp1 = head;
+        Node temp2 = head.next;
+        
+        while(temp2 != null){
+            if(temp1.data == temp2.data){
+                temp1.next = temp2.next;
+                temp2 = temp2.next;
+            }
+            else{
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+            }
+           
+        }
+        return head;
+    }
+}
