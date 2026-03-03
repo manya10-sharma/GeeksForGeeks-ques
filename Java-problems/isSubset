@@ -1,0 +1,25 @@
+import java.util.*;
+class Solution {
+    public boolean isSubset(int a[], int b[]) {
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int n = a.length;
+        int m = b.length;
+        
+        if(n<m) return false;
+        
+        int i=0;
+        int j=0;
+        
+        while(i<n && j<m){
+            if(a[i] == b[j]){
+                i++;
+                j++;
+            }
+            else{
+                i++;
+            }
+        }
+        return j==m;
+    }
+}
