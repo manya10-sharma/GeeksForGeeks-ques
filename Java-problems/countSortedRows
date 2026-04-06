@@ -1,0 +1,22 @@
+class Solution {
+    int sortedCount(int N, int M, int mat[][]) {
+      int count = 0;
+      
+      for(int i = 0 ; i<N ; i++){
+          boolean increasing = true;
+          boolean decreasing = true;
+          for(int j = 0 ; j<M -1 ; j++){
+              if(mat[i][j] >= mat[i][j+1]) {
+                  increasing = false;
+              }
+              if(mat[i][j] <= mat[i][j+1]) {
+                  decreasing = false;
+              }
+          }
+           if (increasing || decreasing) {
+                count++;
+            }
+      }
+      return count;
+    }
+};
