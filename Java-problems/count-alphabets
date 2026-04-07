@@ -1,0 +1,12 @@
+class Solution {
+    static int Count(String S) {
+        int count = 0;
+        
+        for(char ch : S.toCharArray()){
+            if((ch >= 'a' && ch <='z') || (ch>='A' && ch<='Z')){
+                count++;
+            }
+        }
+        return count;
+    }
+}
