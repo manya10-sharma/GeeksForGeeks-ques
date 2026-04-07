@@ -1,0 +1,16 @@
+import java.util.*;
+class Solution {
+    boolean isVowel(char ch){
+        ch = Character.toLowerCase(ch);
+        return ch=='a' || ch=='e' || ch=='i' || ch=='o' ||ch=='u'; 
+    }
+    String removeVowels(String s) {
+        StringBuilder sb = new StringBuilder();
+        for(char ch : s.toCharArray()){
+            if(!isVowel(ch)){
+                sb.append(ch);
+            }
+        }
+        return sb.toString();
+    }
+}
