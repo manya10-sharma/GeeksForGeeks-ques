@@ -1,0 +1,22 @@
+class Solution {
+    public ArrayList<String> smallerAndLarge(String s) {
+        ArrayList<String> res = new ArrayList<>(); 
+        
+        String[] words =  s.trim().split("\\s+");
+        
+        String max = words[0];
+        String min = words[0];
+        
+        for(String w : words){
+            if (w.length() < min.length()) {
+                min = w;
+            }
+            if (w.length() >= max.length()) {
+                max = w;
+            }
+        }
+        res.add(min);
+        res.add(max);
+        return res;
+    }
+}
