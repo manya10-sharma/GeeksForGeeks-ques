@@ -1,0 +1,15 @@
+class Solution {
+    String removeSpecialCharacter(String s) {
+        StringBuilder sb = new StringBuilder();
+        
+        for(char ch : s.toCharArray()){
+            if(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z'){
+                sb.append(ch);
+            }
+        }
+        if(sb.isEmpty()){
+            return "-1";
+        }
+        return sb.toString();
+    }
+}
